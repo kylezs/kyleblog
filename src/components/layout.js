@@ -1,19 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import { Container, Grid, Menu } from 'semantic-ui-react'
-
-import Header from './header'
 
 import 'semantic-ui-less/semantic.less'
-import { Link } from 'gatsby'
+import Header from './header'
+import './layout.css'
 
-const LinkedItem = ({ children, ...props }) => (
-  <Menu.Item as={Link} activeClassName='active' {...props}>{children}</Menu.Item>
-)
-
-const Layout = ({ children, data }) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -29,35 +22,27 @@ const Layout = ({ children, data }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: 'Whatever I feel like writing about' },
+            { name: 'keywords', content: 'knowledge, truth, technology, philosophy, learning' },
           ]}
-        />
+        >
+          <html lang="en" />
 
+        </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
-
-        <Container>
-          <Grid relaxed stackable>
-            <Grid.Column mobile={16} tablet={4} computer={4}>
-              <Menu vertical fluid>
-                <LinkedItem to='/' exact>Home</LinkedItem>
-                <LinkedItem to='/page-2'>Second Page</LinkedItem>
-                <LinkedItem to='/404'>404 Example Page</LinkedItem>
-              </Menu>
-            </Grid.Column>
-
-            <Grid.Column mobile={16} tablet={8} computer={8}>
-              {children}
-            </Grid.Column>
-          </Grid>
-        </Container>
+        <div
+          style={{
+            margin: '0 auto',
+            maxWidth: 960,
+            padding: '0px 1.0875rem 1.45rem',
+            paddingTop: 0,
+          }}
+        >
+          {children}
+        </div>
       </>
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export default Layout

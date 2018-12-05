@@ -1,36 +1,41 @@
 import React from 'react'
-
-import { Button } from 'semantic-ui-react'
+import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 
-const IndexPage = () => (
-  <Layout>
-    <h2>
-      <span role="img" aria-label="Waving hand">
-        👋
-      </span>{' '}
-      Hey there!
-    </h2>
+const IndexPage = (props) => {
+  const postList = props.data.allMarkdownRemark;
+  return (
+    <Layout>
+      {postList.edges.map(({ node }, i) => (
+        <Link key={i} to={node.fields.slug} className="link" >
+          <div className="post-list">
+            <h1>{node.frontmatter.title}</h1>
+            <span>{node.frontmatter.date}</span>
+            <p>{node.excerpt}</p>
+          </div>
+        </Link>
+      ))}
+    </Layout>
+  )
+}
 
-    <p>
-      Welcome to this humble Gatsby Semantic UI starter. It is a very thin layer
-      on top of the regular Gatsby 2 starter. All that has been added is
-      Semantic UI as the component library of choice.
-    </p>
+export default IndexPage;
 
-    <p>
-      Everything is pre-setup and ready to go. You can either use the default
-      Semantic UI theme as it currently runs, or you can override all variables
-      and make custom CSS changes in the <code>src/semantic/site</code> folder.
-    </p>
-
-    <p>
-      The folder contains all the standard settings of the default theme so you
-      don't have to remember which variables are available.
-    </p>
-
-    <Button primary>I'm a button!</Button>
-  </Layout>
-)
-
-export default IndexPage
+export const listQuery = graphql`
+  query ListQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          fields{
+            slug
+          }
+          excerpt(pruneLength: 250)
+          frontmatter {
+            date(formatString: "MMMM Do YYYY")
+            title
+          }
+        }
+      }
+    }
+  }
+`
