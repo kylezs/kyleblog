@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
+import './index.css'
 
 const IndexPage = (props) => {
   const postList = props.data.allMarkdownRemark;
@@ -8,7 +9,7 @@ const IndexPage = (props) => {
     <Layout>
       {postList.edges.map(({ node }, i) => (
         <Link key={i} to={node.fields.slug} className="link" >
-          <div className="post-list">
+          <div className="post-list" style={{ marginBottom: '30px' }}>
             <h1>{node.frontmatter.title}</h1>
             <span>{node.frontmatter.date}</span>
             <p>{node.excerpt}</p>

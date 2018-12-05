@@ -27,7 +27,6 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
-
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
@@ -38,7 +37,7 @@ const Layout = ({ children }) => (
             paddingTop: 0,
           }}
         >
-          {children}
+        {children}
         </div>
       </>
     )}
