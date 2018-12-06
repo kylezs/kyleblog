@@ -1,0 +1,11 @@
+.email-input::placeholder {
+    color: white;
+}
+
+.ui.form > .email-input > input[type="email"]  {
+    color: white;
+}
+
+.ui.form > .email-input > input[type="email"]::placeholder  {
+    color: white;
+}
