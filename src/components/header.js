@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => (
       </h1>
     </Grid.Column>
     <Grid.Column verticalAlign='middle'>
-      <Form name="subscribe" netlify>
+      <Form name="subscribe" data-netlify="true">
       <Input className="email-input" fluid transparent style={{ paddingLeft: '4px' }} type="email" name="email" placeholder="Enter email" action="Subscribe" />
       </Form>
       </Grid.Column>
