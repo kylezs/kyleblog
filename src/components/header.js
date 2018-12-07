@@ -22,6 +22,7 @@ const Header = ({ siteTitle }) => (
       <Input name="email" className="email-input" type='email' fluid transparent style={{ paddingLeft: '4px' }} placeholder='Enter email'>
       <input />
         <Button type='submit'>Subscribe</Button>
+      <input type="hidden" name="form-name" value="subscribe" />
       </Input>
       </Form>
       </Grid.Column>
