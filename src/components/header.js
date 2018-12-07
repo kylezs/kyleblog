@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import { Container, Form, Input, Grid } from 'semantic-ui-react'
+import { Container, Form, Input, Grid, Button } from 'semantic-ui-react'
 import './header.css'
 
+//<Input className="email-input" fluid transparent style={{ paddingLeft: '4px' }} type="email" name="email" placeholder="Enter email" />
 const Header = ({ siteTitle }) => (
   <div style={{ background: '#5AB9EA' }}>
     <Container>
@@ -17,7 +18,11 @@ const Header = ({ siteTitle }) => (
     </Grid.Column>
     <Grid.Column verticalAlign='middle'>
       <Form name="subscribe" data-netlify="true">
-      <Input className="email-input" fluid transparent style={{ paddingLeft: '4px' }} type="email" name="email" placeholder="Enter email" action="submit" />
+
+      <Input name="email" className="email-input" type='email' fluid transparent style={{ paddingLeft: '4px' }} placeholder='Enter email' action>
+        <input />
+        <Button type='submit'>Subscribe</Button>
+      </Input>
       </Form>
       </Grid.Column>
       </Grid.Row>
