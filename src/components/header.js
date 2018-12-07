@@ -4,6 +4,7 @@ import { Container, Form, Input, Grid, Button } from 'semantic-ui-react'
 import './header.css'
 
 //<Input className="email-input" fluid transparent style={{ paddingLeft: '4px' }} type="email" name="email" placeholder="Enter email" />
+// <input />
 const Header = ({ siteTitle }) => (
   <div style={{ background: '#5AB9EA' }}>
     <Container>
@@ -18,8 +19,8 @@ const Header = ({ siteTitle }) => (
     </Grid.Column>
     <Grid.Column verticalAlign='middle'>
       <Form name="subscribe" data-netlify="true" method="POST">
-      <Input name="email" className="email-input" type='email' fluid transparent style={{ paddingLeft: '4px' }} placeholder='Enter email' action>
-        <input />
+      <Input name="email" className="email-input" type='email' fluid transparent style={{ paddingLeft: '4px' }} placeholder='Enter email'>
+      <input />
         <Button type='submit'>Subscribe</Button>
       </Input>
       </Form>
