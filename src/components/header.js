@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => (
       </h1>
     </Grid.Column>
     <Grid.Column verticalAlign='middle'>
-    <form className="ui form" name="subscribe" method="post" data-netlify="true">
+    <form className="ui form" name="subscribe" method="post" data-netlify="true" action="">
     <Form.Group inline style={{ marginBottom: 0 }}>
     <input className="ui input primary email-input" type="email" name="email" placeholder="Email" />
     <button className="ui button" type="submit">Subscribe</button>
