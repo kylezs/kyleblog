@@ -26,13 +26,11 @@ const Header = ({ siteTitle }) => (
       </h1>
     </Grid.Column>
     <Grid.Column verticalAlign='middle'>
-    <Form name="subscribe" method="POST" data-netlify="true">
-    <Form.Group inline>
-      <Input placeholder="Email" type="email" name="email" />
-      <Button type="submit">Subscribe</Button>
-      <input type="hidden" name="form-name" value="subscribe" />
-    </Form.Group>
-    </Form>
+    <form name="subscribe" method="post" data-netlify="true">
+    <input type="email" name="email" placeholder="Email" />
+    <button type="submit">Subscribe</button>
+    <input type="hidden" name="form-name" value="subscribe" />
+    </form>
     </Grid.Column>
     </Grid.Row>
     </Grid>
