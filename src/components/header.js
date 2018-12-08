@@ -13,6 +13,8 @@ import './header.css'
 // <input type="hidden" name="form-name" value="subscribe" />
 // </Input>
 // </Form>
+
+
 const Header = ({ siteTitle }) => (
   <div style={{ background: '#5AB9EA' }}>
     <Container>
@@ -26,11 +28,14 @@ const Header = ({ siteTitle }) => (
       </h1>
     </Grid.Column>
     <Grid.Column verticalAlign='middle'>
-    <form name="subscribe" method="post" data-netlify="true">
-    <input type="email" name="email" placeholder="Email" />
-    <button type="submit">Subscribe</button>
+    <form className="ui form" name="subscribe" method="post" data-netlify="true">
+    <Form.Group inline style={{ marginBottom: 0 }}>
+    <input className="ui input primary email-input" type="email" name="email" placeholder="Email" />
+    <button className="ui button" type="submit">Subscribe</button>
     <input type="hidden" name="form-name" value="subscribe" />
+    </Form.Group>
     </form>
+
     </Grid.Column>
     </Grid.Row>
     </Grid>
