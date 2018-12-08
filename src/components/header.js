@@ -5,6 +5,14 @@ import './header.css'
 
 //<Input className="email-input" fluid transparent style={{ paddingLeft: '4px' }} type="email" name="email" placeholder="Enter email" />
 // <input />
+
+// <Form name="subscribe" data-netlify="true" method="POST">
+// <Input name="email" className="email-input" type='email' fluid transparent style={{ paddingLeft: '4px' }} placeholder='Enter email'>
+// <input />
+// <Button type='submit'>Subscribe</Button>
+// <input type="hidden" name="form-name" value="subscribe" />
+// </Input>
+// </Form>
 const Header = ({ siteTitle }) => (
   <div style={{ background: '#5AB9EA' }}>
     <Container>
@@ -18,15 +26,15 @@ const Header = ({ siteTitle }) => (
       </h1>
     </Grid.Column>
     <Grid.Column verticalAlign='middle'>
-      <Form name="subscribe" data-netlify="true" method="POST">
-      <Input name="email" className="email-input" type='email' fluid transparent style={{ paddingLeft: '4px' }} placeholder='Enter email'>
-      <input />
-        <Button type='submit'>Subscribe</Button>
+    <Form name="subscribe" method="POST" data-netlify="true">
+    <Form.Group inline>
+      <Input placeholder="Email" type="email" name="email" />
+      <Button type="submit">Subscribe</Button>
       <input type="hidden" name="form-name" value="subscribe" />
-      </Input>
-      </Form>
-      </Grid.Column>
-      </Grid.Row>
+    </Form.Group>
+    </Form>
+    </Grid.Column>
+    </Grid.Row>
     </Grid>
     </Container>
   </div>
