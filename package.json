@@ -7,16 +7,21 @@
     "gatsby": "^2.0.61",
     "gatsby-plugin-less": "^2.0.0-beta.5",
     "gatsby-plugin-manifest": "^2.0.11",
+    "gatsby-plugin-netlify-cms": "^3.0.9",
     "gatsby-plugin-offline": "^2.0.18",
     "gatsby-plugin-react-helmet": "next",
     "gatsby-source-filesystem": "^2.0.10",
     "gatsby-transformer-remark": "^2.1.15",
+    "immutable": "^4.0.0-rc.12",
     "less": "^3.8.1",
+    "netlify-cms": "^2.3.0",
+    "netlify-cms-widget-markdown": "^2.0.10",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
     "semantic-ui-less": "^2.4.1",
-    "semantic-ui-react": "^0.82.1"
+    "semantic-ui-react": "^0.82.1",
+    "slate": "^0.44.8"
   },
   "keywords": [
     "gatsby"
