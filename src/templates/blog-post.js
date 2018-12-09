@@ -31,8 +31,8 @@ export default BlogPost
 
 export const query = graphql`
 
- query PostQuery($slug: String!) {
-     markdownRemark(fields: { slug: { eq: $slug } }) {
+ query PostQuery($path: String!) {
+     markdownRemark(fields: { path: { eq: $path } }) {
        html
        frontmatter {
         title

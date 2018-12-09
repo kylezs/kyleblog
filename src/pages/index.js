@@ -8,7 +8,7 @@ const IndexPage = (props) => {
   return (
     <Layout>
       {postList.edges.map(({ node }, i) => (
-        <Link key={i} to={node.fields.slug} className="link" >
+        <Link key={i} to={node.fields.path} className="link" >
           <div className="post-list" style={{ marginBottom: '30px' }}>
             <h1>{node.frontmatter.title}</h1>
             <span>{node.frontmatter.date}</span>
@@ -28,7 +28,7 @@ export const listQuery = graphql`
       edges {
         node {
           fields{
-            slug
+            path
           }
           excerpt(pruneLength: 250)
           frontmatter {

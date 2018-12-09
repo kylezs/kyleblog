@@ -32,7 +32,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
               fields{
-                  slug
+                  path
               }
             frontmatter {
               title
@@ -51,10 +51,10 @@ exports.createPages = ({ actions, graphql }) => {
 
                 result.data.allMarkdownRemark.edges.forEach(({ node }) => {
                     createPage({
-                        path: node.fields.slug,
+                        path: node.fields.path,
                         component: blogTemplate,
                         context: {
-                            slug: node.fields.slug,
+                            path: node.fields.path,
                         }, // additional data can be passed via context
                     })
                 })
@@ -67,12 +67,11 @@ exports.createPages = ({ actions, graphql }) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions
     if (node.internal.type === `MarkdownRemark`) {
-        const slug = createFilePath({ node, getNode, basePath: `pages` })
+        const path = createFilePath({ node, getNode, basePath: `blog` })
         createNodeField({
             node,
-            name: `slug`,
-            value: slug,
+            name: `path`,
+            value: path,
         })
-
     }
 }
