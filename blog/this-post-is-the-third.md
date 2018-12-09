@@ -6,6 +6,6 @@ description: 'A third post, submitted live'
 ---
 This is a test.
 
-\# Testing a heading
+# Testing a heading
 
-\## Testing a subheading.
+## Testing a subheading.
